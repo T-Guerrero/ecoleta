@@ -8,7 +8,7 @@ buttonSearch.addEventListener("click", () => {
 })
 
 content.addEventListener("click", (e) => {
-    //Ignore the parent's event
+    //Ignore the parent's event listener
     e.stopPropagation()
 })
 

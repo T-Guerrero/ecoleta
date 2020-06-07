@@ -17,6 +17,7 @@
                 Cadastre um ponto de coleta
             </a>
         </header>
+        
         <main>
             <h1>Seu marketplace de coleta de resíduos</h1>
             <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
@@ -29,23 +30,7 @@
 {% endblock content %}
 
 {% block modal %}
-    <div class="hide" id="modal">
-        <div class="content">
-            <div class="header">
-                <h1>Pontos de Coleta</h1>
-                <a href="#">Fechar</a>
-            </div>
-            <form action="./search">
-                <label for="search">Cidade</label>
-                <div class="search field">
-                    <input type="text" name="search" placeholder="Pesquise por cidade">
-                    <button>
-                        <img src="./assets/icones/search.svg" alt="Buscar">
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+    {% include "components/modal.html" %}
 {% endblock modal %}
 
 {% block scripts %}

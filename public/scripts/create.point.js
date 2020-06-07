@@ -15,9 +15,13 @@ function populateUFs(){
 function getCities(event){
     const citySelect = document.querySelector("select[name=city]")
     const stateInput = document.querySelector("input[name=state]")
-    const ufValue = event.target.value
+    const ufValue = event.target.value //Id
 
-    stateInput.value = event.target.options[event.target.selectedIndex].text //nome do target
+    /*
+    Além de setar o "uf" com o ID, setamos um input chamado "state"(l 49)
+    logo, precisamos populá-lo com o nome do target
+    */
+    stateInput.value = event.target.options[event.target.selectedIndex].text
 
     citySelect.innerHTML = `<option value="">Selecione a Cidade</option>`
     citySelect.setAttribute("disabled", true)
@@ -44,19 +48,25 @@ function handleSelectedItem(event){
     const itemId = item.dataset.id
     item.classList.toggle("selected")
     
-    if (selectedItems.findIndex( item => item == itemId) >= 0){ //Retorna a posição se o elemento está no array
-        const filtredItems = selectedItems.filter( item => item != itemId) //Filtra todos os elementos do array
+    //Retorna a posição se o elemento está no array
+    const alreadySelected = selectedItems.findIndex( item => item == itemId)
+
+    if (alreadySelected >= 0){
+        //Está selecionado, ou seja, está no array
+        const filtredItems = selectedItems.filter( item => item != itemId)
+        //Filtra todos os elementos do array removendo o item
         selectedItems = filtredItems
     }
     else
+        //Não está selecionado, ou seja, não está no array
         selectedItems.push(itemId)
     
     itemsInput.value = selectedItems
 }
 
-const itemsToCllect = document.querySelectorAll(".items-grid li")
+const itemsToCollect = document.querySelectorAll(".items-grid li")
 const itemsInput = document.querySelector("input[name=items]")
 let selectedItems = []
 
-for (item of itemsToCllect)
+for (item of itemsToCollect)
     item.addEventListener("click", handleSelectedItem)
