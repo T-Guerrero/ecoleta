@@ -3,19 +3,19 @@
         background-position-x: 70vw;
     }
 
-    .content {
+    #page-home .content {
         align-items: center;
         text-align: center;
     }
 
-    header a+a {
+    #page-home header a+a {
         position: absolute;
         bottom: 48px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    main {
+    #page-home main {
         align-items: center;
     }
 
@@ -26,6 +26,17 @@
     #page-search-results .cards img {
         height: 250px;
         grid-template-columns: 1fr;
+    }
+
+    #page-create-point .field-group {
+        flex-direction: column;
+    }
+
+    #page-create-point .field-group .field.marginField {
+        margin-left: 0px;
+    }
+    #page-create-point #number {
+        max-width: 100%;
     }
 }
 
