@@ -4,7 +4,7 @@
 
 ecoleta is a system made for registering garbage recycable points. It was made in Rocketseat Next Level Week.
 
-## Tecnologies
+## Technologies
 
 It was used:
 
